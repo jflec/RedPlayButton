@@ -51,9 +51,9 @@ export const logout = () => (dispatch) => {
     )
 }
 
-export const createAccount = (user) => (dispatch) => {
+export const createUser = (user) => (dispatch) => {
     return (
-        SessionAPIUtil.createAccount(user)
+        SessionAPIUtil.createUser(user)
         .then(
             (user) => dispatch(receiveCurrentUser(user)),
             (errors) => dispatch(receiveErrors(errors.responseJSON))

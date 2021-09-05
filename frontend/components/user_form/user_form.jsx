@@ -2,7 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 
-class SessionForm extends React.Component {
+class UserForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -31,17 +31,23 @@ class SessionForm extends React.Component {
             {currentUser ? <Redirect to='/' /> : ""}
       
                 <form onSubmit={this.handleSubmit}>
-
-                    <div className="signin-headings">
-                        <h1>Sign in</h1>
-                        <h2 className="form-h2">redplaybuttonlol</h2>
-                    </div>
-                        <div className="session-input">
+                        <h1>Sign up</h1>
+                        <h2>to continue to RedPlayButton</h2>
+                    <div className="session-input">
                             <input
                                 autoFocus
                                 className="session-text"
                                 type="text"
-                                value={this.state.username}
+                                placeholder=" "
+                                onChange={this.update('email')} />
+                            <label
+                                className="session-label">Email</label>
+                        </div>
+                        <div className="session-input">
+                            <input
+                                
+                                className="session-text"
+                                type="text"
                                 placeholder=" "
                                 onChange={this.update('username')}/>
                             <label
@@ -52,22 +58,19 @@ class SessionForm extends React.Component {
                             <input
                                 className="session-text"
                                 type="password"
-                                value={this.state.password}
                                 placeholder=" "
                                 onChange={this.update('password')} />
                             <label
                                 className="session-label">Password</label>
                         </div>
+
                         <div className="form-btns">
                             <button className="form-submit">{this.props.formType}</button>
                             <Route path="/login"/>
                         </div>
                 </form>
-               
-            
-            
         </div>
     }
 }
 
-export default SessionForm;
+export default UserForm;
