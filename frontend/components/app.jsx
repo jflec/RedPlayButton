@@ -1,16 +1,22 @@
-import React from "react";
-import { Route, Switch } from 'react-router-dom';
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import SessionFormContainer from "./session_form/session_form_container";
-import CreateUserFormContainer from "./user_form/create_user_form_container"
-import Home from "./home"
+import React from 'react';
+import { Provider } from 'react-redux';
+import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
 
-const App = () => {
-    return <Switch>
-            <AuthRoute path="/login" component={SessionFormContainer} />
-            <AuthRoute path="/signup" component={CreateUserFormContainer} />
-            <Route exact path="/" component={Home} />
+import SignUpFormContainer from './session_form/signup_form_container';
+import LogInFormContainer from './session_form/login_form_container';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
+
+const App = () => (
+  <div>
+    <header>
+      <Link to="/" className="header-link"></Link>
+    </header>
+    <Switch>
+      <AuthRoute exact path="/login" component={LogInFormContainer} />
+      <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+      <Route exact path="/" />
     </Switch>
-}
+  </div>
+);
 
 export default App;

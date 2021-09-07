@@ -1,17 +1,14 @@
 import React from 'react';
 
-class SessionForm extends React.Component {
+class UserForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      email: '',
       username: '',
       password: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  componentWillUnmount() {
-    this.props.clearErrors();
   }
 
   update(field) {
@@ -19,6 +16,10 @@ class SessionForm extends React.Component {
       this.setState({
         [field]: e.currentTarget.value,
       });
+  }
+
+  componentWillUnmount() {
+    this.props.clearErrors();
   }
 
   handleSubmit(e) {
@@ -29,7 +30,7 @@ class SessionForm extends React.Component {
 
   renderErrors() {
     return (
-      <ul className="errors">
+      <ul className="errors-s">
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>{error}</li>
         ))}
@@ -51,12 +52,22 @@ class SessionForm extends React.Component {
             <ul className="red">e</ul>
           </li>
           <div className="greeting">
-            <p className="greeting-one">Sign in</p>
+            <p className="greeting-one">Sign up</p>
             <p className="greeting-two">to continue to RedPlayButton</p>
           </div>
           {this.renderErrors()}
           <div className="login-form">
             <li className="input-list">
+              <ul>
+                <input
+                  type="text"
+                  value={this.state.email}
+                  placeholder="Email"
+                  onfocus="this.placeholder = ''"
+                  onChange={this.update('email')}
+                  className="login-input"
+                />
+              </ul>
               <ul>
                 <input
                   type="text"
@@ -78,12 +89,12 @@ class SessionForm extends React.Component {
                 />
               </ul>
             </li>
-            <p className="demo-text">Don't feel like making an account?</p>
-            <p className="demo-text-two">
+            <p className="demo-text-s">Don't feel like making an account?</p>
+            <p className="demo-text-two-s">
               Try the <mark>demo</mark> instead.
             </p>
             {this.props.navLink}
-            <input className="session-submit" type="submit" value="Next" />
+            <input className="session-submit-s" type="submit" value="Next" />
           </div>
         </form>
       </div>
@@ -91,4 +102,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default SessionForm;
+export default UserForm;

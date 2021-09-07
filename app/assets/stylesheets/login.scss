@@ -1,0 +1,225 @@
+@font-face {
+  font-family: 'Product Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'),
+    url(https://fonts.gstatic.com/s/productsans/v5/HYvgU2fE2nRJvZ5JFAumwegdm0LZdjqr5-oayXSOefg.woff2)
+      format('woff2');
+}
+
+$bingleFont: -39px;
+
+body {
+  font-family: Product Sans;
+}
+
+.errors {
+  position: absolute;
+  bottom: 160px;
+  font-size: 14px;
+  list-style: none;
+  color: rgb(217, 48, 37);
+}
+
+.errors-s {
+  position: absolute;
+  bottom: 80px;
+  font-size: 14px;
+  list-style: none;
+  color: rgb(217, 48, 37);
+}
+
+.login-form-container {
+  border: 1px solid rgb(218, 220, 224);
+  border-radius: 10px;
+  width: 450px;
+  height: 502px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 25%;
+}
+
+.session-submit {
+  transition: 0.2s;
+  background-color: rgb(26, 115, 232);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  width: 79px;
+  height: 36px;
+  position: absolute;
+  right: 40px;
+  bottom: 76px;
+  font-weight: bold;
+}
+
+.session-submit-s {
+  transition: 0.2s;
+  background-color: rgb(26, 115, 232);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  width: 79px;
+  height: 36px;
+  position: absolute;
+  right: 40px;
+  bottom: 56px;
+  font-weight: bold;
+}
+
+.session-submit:hover {
+  transition: 0.2s;
+  box-shadow: 0px 0px 2px 1px rgb(182, 182, 182);
+  background-color: rgb(22, 101, 204);
+}
+
+.session-submit-s:hover {
+  transition: 0.2s;
+  box-shadow: 0px 0px 2px 1px rgb(182, 182, 182);
+  background-color: rgb(22, 101, 204);
+}
+
+.input-list {
+  list-style-type: none;
+  justify-content: center;
+  display: block;
+  position: absolute;
+  top: 168px;
+}
+.login-input {
+  font-size: 16px;
+  border: 1px solid rgb(218, 220, 224);
+  border-radius: 5px;
+  width: 334px;
+  height: 48px;
+  padding-left: 17px;
+  padding-right: 17px;
+}
+
+.login-input:focus {
+  outline: none !important;
+  transition: 0.05s;
+  border: 2px solid rgb(26, 115, 232);
+  margin-top: -1px;
+  margin-bottom: -1px;
+}
+
+.login-input:focus::placeholder {
+  color: transparent;
+}
+
+.greeting {
+  position: absolute;
+  top: 68px;
+  left: 120px;
+  text-align: center;
+}
+
+.greeting-one {
+  font-size: 22px;
+  margin-bottom: -4px;
+}
+.greeting-two {
+  font-size: 16px;
+}
+
+.demo-text {
+  font-size: 14px;
+  position: absolute;
+  bottom: 140px;
+  left: 40px;
+  color: rgb(95, 99, 104);
+}
+
+.demo-text-two {
+  font-size: 14px;
+  position: absolute;
+  bottom: 120px;
+  left: 40px;
+  color: rgb(95, 99, 104);
+}
+
+.demo-text-s {
+  font-size: 14px;
+  position: absolute;
+  bottom: 60px;
+  left: 40px;
+  color: rgb(95, 99, 104);
+}
+
+mark {
+  background-color: white;
+  color: rgb(26, 115, 232);
+  font-weight: 500;
+}
+
+.demo-text-two-s {
+  font-size: 14px;
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  color: rgb(95, 99, 104);
+}
+
+.signup-button {
+  text-decoration: none;
+  color: rgb(26, 115, 232);
+  position: absolute;
+  left: 32px;
+  bottom: 77px;
+  font-weight: 500;
+  padding: 8px;
+}
+
+.login-button {
+  display: flex;
+  text-decoration: none;
+  color: rgb(26, 115, 232);
+  position: absolute;
+  left: 32px;
+  bottom: 16px;
+  font-weight: 500;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.login-button mark {
+  color: rgb(95, 99, 104);
+  margin-right: 5px;
+}
+
+.signup-button:hover {
+  background-color: hsl(214, 100%, 97%);
+}
+
+.bingle {
+  position: absolute;
+  font-size: 26px;
+  list-style: none;
+  display: flex;
+  top: 23px;
+  left: 185px;
+}
+
+.blue {
+  margin-left: $bingleFont;
+  color: rgb(66, 133, 244);
+}
+
+.red {
+  margin-left: $bingleFont;
+  color: rgb(234, 67, 53);
+}
+
+.orange {
+  margin-left: $bingleFont;
+  color: rgb(251, 188, 5);
+}
+
+.green {
+  margin-left: $bingleFont;
+  color: rgb(52, 168, 83);
+}
