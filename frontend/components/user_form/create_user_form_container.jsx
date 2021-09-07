@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import UserForm from './user_form';
 import { createUser, login, clearErrors } from '../../actions/session_actions';
 
-const mSTP = (state) => {
+const mSTP = (state, rProps) => {
     return {
         currentUser: state.entities.users[state.session.id],
         errors: state.errors.session,

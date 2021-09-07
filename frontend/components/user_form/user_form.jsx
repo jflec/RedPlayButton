@@ -5,7 +5,11 @@ import { Route } from 'react-router-dom';
 class UserForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { username: "", password: "" };
+        this.state = {
+            username: "",
+            password: "",
+
+        };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -22,19 +26,50 @@ class UserForm extends React.Component {
         return (e) => this.setState({ [field]: e.currentTarget.value })
     }
     render() {
-        const { currentUser } = this.props;
-        return (
-            <div>
-                {currentUser ? <Redirect to='/' /> : ""}
+        const { currentUser, errors } = this.props;
+        return <div className="background">
+            {currentUser ? <Redirect to='/' /> : ""}
+      
                 <form onSubmit={this.handleSubmit}>
-                    <input autoFocus type="text" onChange={this.update('email')} />
-                    <input type="text" onChange={this.update('username')}/>
-                    <input type="password" onChange={this.update('password')} />
-                    <button>{this.props.formType}</button>
-                    <Route path="/login"/>
+                        <h1>Sign up</h1>
+                        <h2>to continue to RedPlayButton</h2>
+                    <div className="session-input">
+                            <input
+                                autoFocus
+                                className="session-text"
+                                type="text"
+                                placeholder=" "
+                                onChange={this.update('email')} />
+                            <label
+                                className="session-label">Email</label>
+                        </div>
+                        <div className="session-input">
+                            <input
+                                
+                                className="session-text"
+                                type="text"
+                                placeholder=" "
+                                onChange={this.update('username')}/>
+                            <label
+                                className="session-label">Username</label>
+                        </div>
+
+                        <div className="session-input">
+                            <input
+                                className="session-text"
+                                type="password"
+                                placeholder=" "
+                                onChange={this.update('password')} />
+                            <label
+                                className="session-label">Password</label>
+                        </div>
+
+                        <div className="form-btns">
+                            <button className="form-submit">{this.props.formType}</button>
+                            <Route path="/login"/>
+                        </div>
                 </form>
-            </div>
-        )
+        </div>
     }
 }
 
