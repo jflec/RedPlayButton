@@ -1,4 +1,5 @@
 class Video < ApplicationRecord
+
     validates :title, :uploader_id, presence: true
 
     belongs_to :user,
@@ -17,7 +18,14 @@ class Video < ApplicationRecord
         foreign_key: :video_id,
         class_name: :View
 
+    has_many :likes,
+        as: :likeable
 
+    has_many :dislikes,
+        as: :dislikeable
+
+    has_one_attached :video
+    has_one_attached :thumbnail
 
 end
 
