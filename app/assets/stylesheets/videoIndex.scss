@@ -1,0 +1,22 @@
+.video-index-item {
+  height: 203px;
+  width: 360px;
+  margin: 16px;
+  transition: 0.2s;
+  background-color: rgb(185, 185, 185);
+  padding: 0px;
+}
+
+.video-index-item:hover {
+  transition: 0.2s;
+  transform: scale(1.05);
+  background-color: rgb(126, 126, 126);
+}
+
+.video-index {
+  margin-top: 80px;
+  margin-left: auto;
+  width: 87.5%;
+  display: flex;
+  flex-wrap: wrap;
+}
