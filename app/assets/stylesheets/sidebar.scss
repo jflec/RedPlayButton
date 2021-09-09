@@ -1,7 +1,15 @@
 .sidebar {
   position: fixed;
-  width: 11.5%;
+  width: 12.5%;
+  margin-top: 56px;
   height: 100%;
-  background-color: rgb(32, 32, 32);
+  background-color: rgb(31, 31, 31);
   z-index: 2;
+  overflow-x: scroll;
+}
+
+.list {
+  list-style: none;
+  color: white;
+  font-size: 20px;
 }

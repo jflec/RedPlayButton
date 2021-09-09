@@ -8,14 +8,18 @@ function Navbar(props) {
 
   return (
     <div className="navbar">
-      <NavLink exact to="/" className="logo">
-        <img className="logo" src={maybelogo}></img>
+      <NavLink exact to="/">
+        <span>RedPlayButton</span>
       </NavLink>
       <Search />
-      <div className="user-icon-dropdown-content-links" onClick={logout}>
-        SignOut
-      </div>
-      {currentUser ? <p>pfp</p> : <SigninButton />}
+      {currentUser ? (
+        <button onClick={logout} className="auth-button">
+          <p>SIGN OUT</p>
+        </button>
+      ) : (
+        <div></div>
+      )}
+      {currentUser ? <p className="profile-picture">Joe</p> : <SigninButton />}
     </div>
   );
 }

@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 function SigninButton() {
   return (
     <NavLink to="/login">
-      <button className="index-sign-in">
+      <button className="auth-button">
         <p>SIGN IN</p>
       </button>
     </NavLink>

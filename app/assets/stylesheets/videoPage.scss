@@ -9,8 +9,8 @@
 }
 
 .video-template {
-  margin-top: 81px;
-  margin-left: 99px;
+  margin-top: 80px;
+  margin-left: 265px;
   position: relative;
   height: 720px;
   width: 1280px;
@@ -21,14 +21,15 @@
 
 .side-index {
   margin-top: 80px;
-  margin-left: auto;
-  width: 26.5%;
+  float: right;
+  margin-right: 206px;
+  width: 8%;
   display: flex;
   flex-direction: column;
 }
 
 .side-index-item:hover {
-  transition: 0.2s;
+  transition: 0.4s;
   transform: scale(1.05);
   background-color: rgb(126, 126, 126);
 }
@@ -38,5 +39,5 @@
   margin-bottom: 8px;
   transition: 0.2s;
   width: 168px;
-  height: 94px;
+  height: 96px;
 }
