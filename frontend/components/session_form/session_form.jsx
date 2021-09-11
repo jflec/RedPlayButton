@@ -8,6 +8,11 @@ class SessionForm extends React.Component {
       password: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demo = this.demo.bind(this);
+  }
+
+  demo() {
+    this.props.processForm({ username: 'demo', password: 'password' });
   }
 
   componentWillUnmount() {
@@ -78,7 +83,7 @@ class SessionForm extends React.Component {
             </li>
             <p className="demo-text">Don't feel like making an account?</p>
             <p className="demo-text-two">
-              Try the <mark>demo</mark> instead.
+              Try the <mark onClick={this.demo}>demo</mark> instead.
             </p>
             {this.props.navLink}
             <input className="session-submit" type="submit" value="Next" />
