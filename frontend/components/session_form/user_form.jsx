@@ -63,7 +63,6 @@ class UserForm extends React.Component {
                   type="text"
                   value={this.state.email}
                   placeholder="Email"
-                  onfocus="this.placeholder = ''"
                   onChange={this.update('email')}
                   className="login-input"
                 />
@@ -73,7 +72,6 @@ class UserForm extends React.Component {
                   type="text"
                   value={this.state.username}
                   placeholder="Username"
-                  onfocus="this.placeholder = ''"
                   onChange={this.update('username')}
                   className="login-input"
                 />
@@ -83,7 +81,6 @@ class UserForm extends React.Component {
                   type="password"
                   value={this.state.password}
                   placeholder="Password"
-                  onfocus="this.placeholder = ''"
                   onChange={this.update('password')}
                   className="login-input"
                 />

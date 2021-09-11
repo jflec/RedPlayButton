@@ -3,11 +3,11 @@ import VideoIndex from './video_index';
 import { fetchVideos, deleteVideo } from '../../actions/video_actions';
 import { withRouter } from 'react-router-dom';
 
-const mSTP = ({ entities, session }, rProps) => {
+const mSTP = ({ entities, session }) => {
   return {
-    // videos: Object.values(entities.videos),
-    userId: session.id,
     users: entities.users,
+    userId: session.id,
+    videos: Object.values(entities.videos),
   };
 };
 

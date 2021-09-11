@@ -1,0 +1,43 @@
+.video-index {
+  margin-top: 8px;
+  margin: 0 auto;
+  width: 86%;
+  max-width: 1536px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.video-index-thumbnail {
+  cursor: pointer;
+  height: 203px;
+  width: 360px;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 12px;
+  transition: 0.4s;
+  background-color: rgb(24, 24, 24);
+  text-align: center;
+  border-radius: 10px;
+  opacity: 0.7;
+}
+
+.video-index-thumbnail:hover {
+  transition: 0.2s;
+  transform: scale(1.05);
+  background-color: rgb(75, 75, 75);
+  opacity: 1;
+}
+
+.uploader-info {
+  margin-top: -10px;
+}
+
+.video-display {
+  color: white;
+  margin-left: 12px;
+  margin-top: -24px;
+  padding: 0;
+  font-size: 14px;
+  border: 0px;
+  outline: none;
+}

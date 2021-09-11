@@ -1,0 +1,39 @@
+.fake-background {
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: fixed;
+  overflow: auto;
+  background-color: rgb(24, 24, 24);
+}
+
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+  position: relative;
+  z-index: 2;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(24, 24, 24);
+  position: relative;
+  z-index: 2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  position: relative;
+  z-index: 2;
+}
+
+::-webkit-scrollbar-corner {
+  background: rgb(24, 24, 24);
+}
