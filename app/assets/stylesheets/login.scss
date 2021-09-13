@@ -9,7 +9,7 @@
 
 $bingleFont: -39px;
 
-body {
+html body {
   font-family: Product Sans;
 }
 
@@ -23,7 +23,7 @@ body {
 
 .errors-s {
   position: absolute;
-  bottom: 80px;
+  bottom: 70px;
   font-size: 14px;
   list-style: none;
   color: rgb(217, 48, 37);
@@ -181,7 +181,7 @@ mark {
   color: rgb(26, 115, 232);
   position: absolute;
   left: 32px;
-  bottom: 16px;
+  bottom: 58px;
   font-weight: 500;
   padding: 8px;
   font-size: 14px;

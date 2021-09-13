@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import NavbarContainer from '../navbar/navbar_container';
 import VideoPlayer from './video_player';
+import VideoRowsContainer from './video_rows_container';
 
 function VideoShow(props) {
   const { videos, video, userId } = props;

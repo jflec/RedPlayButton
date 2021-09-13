@@ -1,12 +1,13 @@
 import React from 'react';
 import SigninButton from './signin_button';
-import Search from '../search/search';
+import SearchContainer from '../search/search_container';
 import { NavLink } from 'react-router-dom';
 import UploadContainer from '../upload/upload_container';
 import Sidebar from '../sidebar';
+import UserIconContainer from './user_icon_container';
 
 function Navbar(props) {
-  const { currentUser, logout } = props;
+  const { currentUser } = props;
 
   return (
     <div className="navbar">
@@ -23,17 +24,10 @@ function Navbar(props) {
         <div className="sidebar-black-screen"></div>
       </div>
       <NavLink exact to="/">
-        <img className="logo" src={window.maybelogo} alt="" />
+        <img className="logo" src={window.maybelogo} />
       </NavLink>
-      <Search />
-      {currentUser ? (
-        <button onClick={logout} className="auth-button">
-          <p>SIGN OUT</p>
-        </button>
-      ) : (
-        <div></div>
-      )}
-      {currentUser ? <p className="profile-picture">Joe</p> : <SigninButton />}
+      <SearchContainer />
+      {currentUser ? <UserIconContainer /> : <SigninButton />}
       <UploadContainer />
     </div>
   );

@@ -86,10 +86,6 @@ class UserForm extends React.Component {
                 />
               </ul>
             </li>
-            <p className="demo-text-s">Don't feel like making an account?</p>
-            <p className="demo-text-two-s">
-              Try the <mark>demo</mark> instead.
-            </p>
             {this.props.navLink}
             <input className="session-submit-s" type="submit" value="Next" />
           </div>

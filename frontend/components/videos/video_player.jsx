@@ -7,7 +7,13 @@ function VideoPlayer(props) {
   if (id) {
     return (
       <div className="player">
-        <video autoPlay ref={video} src={URL}></video>
+        <video
+          className="video-show"
+          autoPlay
+          controls={true}
+          ref={video}
+          src={URL}
+        ></video>
       </div>
     );
   } else {

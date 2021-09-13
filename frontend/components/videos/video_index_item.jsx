@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import { NavLink } from 'react-router-dom';
 
 class VideoIndexItem extends React.Component {
   constructor(props) {
@@ -28,16 +29,28 @@ class VideoIndexItem extends React.Component {
     if (video) {
       return (
         <div className="video-index-item">
-          <img
+          <video
             onClick={this.watchVideo}
             className="video-index-thumbnail"
-            src={video.thumbURL ? video.thumbURL : window.defaultThumbnail}
-          />
+            src={video.videoURL}
+            loop={true}
+            muted
+            onMouseOver={(event) => event.target.play()}
+            onMouseOut={(event) => (
+              (event.target.currentTime = 0), event.target.pause()
+            )}
+          ></video>
           <div className="video-display">
-            <img
-              className="user-icon-bigger"
-              src={video.user.profile_image_url}
-            />
+            <NavLink exact to={`/c/${video.user.username}`}>
+              {!video.user.profile_picture_url ? (
+                <img src={window.defaultPFP} className="user-icon-bigger" />
+              ) : (
+                <img
+                  className="user-icon-bigger"
+                  src={video.user.profile_picture_url}
+                />
+              )}
+            </NavLink>
             <div className="video-info">
               <h3 onClick={this.watchVideo}>{video.title}</h3>
               <p className="uploader-info">{video.user.username}</p>

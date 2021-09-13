@@ -22,11 +22,22 @@
 .search-button {
   color: rgb(226, 226, 226);
   border: none;
-  height: 32px;
-  width: 65px;
-  background-color: rgb(49, 49, 49);
+  background-color: rgb(206, 206, 206);
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
+  padding: 4px 20px;
+  width: 24px;
+  height: 24px;
+  filter: invert(100%);
+  cursor: pointer;
+}
+
+.search-icon {
+  opacity: 0.6;
+}
+
+.search-icon:hover {
+  opacity: 1;
 }
 
 .search-input:focus {

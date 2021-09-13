@@ -65,7 +65,9 @@ class Upload extends React.Component {
     formData.append('video[description]', this.state.description);
     formData.append('video[uploader_id]', this.props.currentUser.id);
     formData.append('video[videofile]', this.state.videofile);
-    this.props.postVideo(formData).then(this.props.history.push(`/`));
+    this.props
+      .postVideo(formData)
+      .then(this.props.history.push(`/c/${this.props.currentUser.username}`));
   }
 
   updateTitle(e) {
@@ -196,6 +198,7 @@ class Upload extends React.Component {
           <button type="submit" className="select-files">
             PUBLISH
           </button>
+          {this.state.hidden ? '' : ''}
         </div>
       </>
     );
@@ -224,16 +227,20 @@ class Upload extends React.Component {
   render() {
     return (
       <div className="upload-modal">
-        <div className="create-icon-box">
-          <svg
-            viewBox="0 0 24 24"
-            className="create-icon"
-            focusable="false"
-            onClick={this.toggle}
-          >
-            <path d="M14,13h-3v3H9v-3H6v-2h3V8h2v3h3V13z M17,6H3v12h14v-6.39l4,1.83V8.56l-4,1.83V6 M18,5v3.83L22,7v8l-4-1.83V19H2V5H18L18,5 z"></path>
-          </svg>
-        </div>
+        {this.props.currentUser ? (
+          <div className="create-icon-box">
+            <svg
+              viewBox="0 0 24 24"
+              className="create-icon"
+              focusable="false"
+              onClick={this.toggle}
+            >
+              <path d="M14,13h-3v3H9v-3H6v-2h3V8h2v3h3V13z M17,6H3v12h14v-6.39l4,1.83V8.56l-4,1.83V6 M18,5v3.83L22,7v8l-4-1.83V19H2V5H18L18,5 z"></path>
+            </svg>
+          </div>
+        ) : (
+          ''
+        )}
         {this.state.hidden ? '' : this.display()}
       </div>
     );

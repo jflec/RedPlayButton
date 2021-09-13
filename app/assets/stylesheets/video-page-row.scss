@@ -1,0 +1,62 @@
+.video-rows-item {
+  display: flex;
+}
+
+.video-rows-thumbnail {
+  width: 360px;
+  height: 202px;
+  margin-top: 16px;
+  transition: 0.2s;
+  opacity: 0.7;
+  border-radius: 10px;
+}
+
+.video-rows-thumbnail:hover {
+  transition: 0.2s;
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.video-rows-details {
+  top: 6px;
+  margin-left: 16px;
+  position: relative;
+  color: white;
+  padding: 0;
+}
+
+.video-rows-details h3 {
+  font-weight: 300;
+}
+
+.video-rows-user-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50px;
+}
+
+.channel-info {
+  color: rgb(149, 149, 149);
+  display: flex;
+  font-size: 14px;
+  position: relative;
+}
+
+.video-rows-username {
+  position: relative;
+  left: 8px;
+  bottom: 12px;
+}
+
+.video-rows-description {
+  position: relative;
+  bottom: 20px;
+  color: rgb(149, 149, 149);
+}
+
+.video-rows-holder {
+  margin-left: 23%;
+  width: 58%;
+  margin-top: 48px;
+  border-top: 1px solid rgb(48, 48, 48);
+}
