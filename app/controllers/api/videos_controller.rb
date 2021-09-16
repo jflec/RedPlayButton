@@ -1,8 +1,6 @@
 class Api::VideosController < ApplicationController
-
     def show
-        @video = Video.includes( thumbnail_attachment: [:blob], videofile_attachment: [:blob], ).find_by(id: params[:id])
-
+        @video = Video.includes( thumbnail_attachment: [:blob], videofile_attachment: [:blob], comments: [:commenter]).find_by(id: params[:id])
     end
     
     def index

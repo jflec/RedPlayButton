@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import VideoRowsItem from './video_rows_item';
+import SideRowsItem from './side_rows_item';
 
-function VideoRows(props) {
+function SideRows(props) {
   const { videos, searching } = props;
 
   useEffect(() => {
@@ -10,13 +10,13 @@ function VideoRows(props) {
 
   if (videos) {
     return (
-      <div className="video-rows-holder">
+      <div className="side-rows-holder">
         {videos.map((video) => (
-          <VideoRowsItem key={video.id} video={video} />
+          <SideRowsItem key={video.id} video={video} />
         ))}
       </div>
     );
   }
 }
 
-export default VideoRows;
+export default SideRows;

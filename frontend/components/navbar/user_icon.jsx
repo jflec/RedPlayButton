@@ -24,15 +24,11 @@ class UserIcon extends React.Component {
           <div className="user-display">
             {currentUser.profile_picture_url ? (
               <img
-                className="user-icon-bigger"
+                className="user-icon-medium"
                 src={currentUser.profile_picture_url}
               ></img>
             ) : (
-              <img
-                className="user-icon-bigger"
-                src={window.defaultPFP}
-                alt=""
-              />
+              <img className="user-icon-medium" src={window.defaultPFP} />
             )}
             <div className="user-info">
               <h1>{currentUser.username}</h1>
@@ -98,7 +94,7 @@ class UserIcon extends React.Component {
               src={currentUser.profile_picture_url}
             ></img>
           ) : (
-            <img className="user-icon" src={window.defaultPFP} alt="" />
+            <img className="user-icon" src={window.defaultPFP} />
           )}
           {!this.state.hidden ? this.display(logout, currentUser) : ''}
         </div>

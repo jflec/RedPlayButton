@@ -5,14 +5,9 @@ function Search(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (props.match.path === '/videos/search') {
-      props.history.push(`/videos/search?query=${query}`);
-      props.searchVideos(query);
-      setQuery('');
-    } else {
-      props.history.push(`/videos/search?query=${query}`);
-      setQuery('');
-    }
+    props.history.push(`/videos/search?query=${query}`);
+    props.searchVideos(query);
+    setQuery('');
   }
 
   function update(e) {

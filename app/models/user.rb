@@ -7,14 +7,6 @@ class User < ApplicationRecord
     validates :password, length: { minimum: 6 }, allow_nil: true
 
     after_initialize :ensure_session_token
-
-    has_many :likes,
-        foreign_key: :liker_id,
-        class_name: :Like
-    
-    has_many :dislikes, 
-        foreign_key: :disliker_id,
-        class_name: :Dislike
     
     has_many :comments,
         foreign_key: :commenter_id,
@@ -24,15 +16,6 @@ class User < ApplicationRecord
         foreign_key: :commenter_id,
         class_name: :Comment
 
-    has_many :liked_videos,
-        through: :likes,
-        source: :likeable,
-        source_type: :Video
-
-    has_many :disliked_videos,
-        through: :dislikes,
-        source: :dislikeable,
-        source_type: :Video
 
     before_validation :ensure_session_token
 

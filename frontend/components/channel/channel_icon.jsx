@@ -11,7 +11,7 @@ class ChannelIcon extends React.Component {
             src={currentUser.profile_picture_url}
           ></img>
         ) : (
-          <img className="channel-pfp" src={window.defaultPFP} alt="" />
+          <img className="channel-pfp" src={window.defaultPFP} />
         )}
         <h2 className="channel-username">{currentUser.username}</h2>
       </div>

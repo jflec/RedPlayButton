@@ -1,23 +1,21 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 function VideoPlayer(props) {
-  const { URL, id, max } = props;
+  const { URL, id } = props;
 
   const video = useRef(null);
 
   if (id) {
     return (
-      <div className="player">
-        <video
-          className="video-show"
-          autoPlay
-          controls={true}
-          ref={video}
-          src={URL}
-        ></video>
-      </div>
+      <video
+        className="video-show"
+        autoPlay
+        controls={true}
+        ref={video}
+        src={URL}
+      ></video>
     );
   } else {
-    return <h1>... nothing found</h1>;
+    return <div></div>;
   }
 }
 

@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import NavbarContainer from '../navbar/navbar_container';
 import VideoPlayer from './video_player';
-import VideoRowsContainer from './video_rows_container';
+import SideRowsContainer from './side_rows_container';
+import CommentFormContainer from '../comments/comment_form_container';
+import CommentIndexContainer from '../comments/comment_index_container';
 
 function VideoShow(props) {
   const { videos, video, userId } = props;
@@ -31,12 +33,29 @@ function VideoShow(props) {
         <div>
           <NavbarContainer />
           <VideoPlayer URL={video.videoURL} id={video.id} max={videos.length} />
-          <p className="video-title">{video.title}</p>
+          <div className="video-details-container">
+            <p className="video-title">{video.title}</p>
+            <div className="video-channel-details">
+              {video.user.profile_picture_url ? (
+                <img
+                  className="user-icon-large"
+                  src={video.user.profile_picture_url}
+                ></img>
+              ) : (
+                <img className="user-icon-large" src={window.defaultPFP} />
+              )}
+              <p className="video-channel">{video.user.username}</p>
+              <p className="video-description">{video.description}</p>
+            </div>
+          </div>
+          <SideRowsContainer />
+          <CommentFormContainer />
+          <CommentIndexContainer />
         </div>
       </div>
     );
   } else {
-    return <></>;
+    return null;
   }
 }
 

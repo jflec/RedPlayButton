@@ -3,7 +3,6 @@ import SigninButton from './signin_button';
 import SearchContainer from '../search/search_container';
 import { NavLink } from 'react-router-dom';
 import UploadContainer from '../upload/upload_container';
-import Sidebar from '../sidebar';
 import UserIconContainer from './user_icon_container';
 
 function Navbar(props) {
@@ -20,7 +19,6 @@ function Navbar(props) {
         >
           <path d="M21,6H3V5h18V6z M21,11H3v1h18V11z M21,17H3v1h18V17z"></path>
         </svg>
-        <Sidebar />
         <div className="sidebar-black-screen"></div>
       </div>
       <NavLink exact to="/">

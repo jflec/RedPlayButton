@@ -7,7 +7,6 @@ class Upload extends React.Component {
       title: '',
       description: '',
       hidden: true,
-      uploadingImage: false,
       next: false,
       videoURL: null,
       videofile: null,
@@ -49,7 +48,6 @@ class Upload extends React.Component {
     e.preventDefault();
     this.setState({
       hidden: true,
-      uploadingImage: false,
       next: false,
       videoURL: null,
       videofile: null,
@@ -92,12 +90,10 @@ class Upload extends React.Component {
 
   onDrop(e) {
     e.preventDefault();
-    setTimeout(() => this.setState({ next: true }), 2500);
     const mFile = e.dataTransfer.files[0];
     const fileReader = new FileReader();
     fileReader.onloadend = () => {
       this.setState({
-        uploadingImage: true,
         videoURL: fileReader.reseult,
         videofile: mFile,
         title: mFile.name.split('.')[0],
@@ -111,30 +107,35 @@ class Upload extends React.Component {
   uploadScreen(e) {
     return (
       <div className="file-input">
+        <img className="scuffed-icon" src={window.uploadButton} />
         <input
           type="file"
           name="file"
-          id="file"
-          className="drag"
+          className="drag-and-drop"
           onChange={this.handleFile.bind(this)}
         />
+        <h1>Drag and drop video files to upload</h1>
+        <p className="upload-details">Your videos will be public.</p>
         <p
           onDragOver={this.onDragOver.bind(this)}
           onDragEnter={this.onDragEnter.bind(this)}
           onDrop={this.onDrop.bind(this)}
         ></p>
+        <button
+          className="click-button"
+          onclick="document.getElementsByClassName('click').click()"
+        >
+          SELECT FILES
+        </button>
         <input
           type="file"
           name="file"
-          id="file"
-          className="drop"
+          className="click"
           onChange={this.handleFile.bind(this)}
         />
-        <div className="select-files">SELECT FILES</div>
       </div>
     );
   }
-
   publishScreen() {
     const preview = this.state.videoURL ? (
       <div className="preview">
@@ -148,54 +149,45 @@ class Upload extends React.Component {
     ) : (
       <img src={window.defaultThumbnail} alt="thumbnail"></img>
     );
-    const { errors } = this.props;
 
     return (
       <>
         <div className="modal">
           <input
             autoFocus
-            id="upload-title"
-            className="upload-text"
+            className="upload-title-text"
             type="text"
-            placeholder="Add a title that describes your video"
+            placeholder="Add a title"
             value={this.state.title}
             onChange={this.updateTitle.bind(this)}
           />
-          <label id="upload-title-label">Title (required)</label>
         </div>
-
-        <div className="upload-input">
-          <textarea
-            autoFocus
-            id="upload-description"
-            className="upload-text"
-            type="text"
-            value={this.state.description}
-            placeholder="Tell viewers about your video"
-            onChange={this.updateDescription.bind(this)}
-          />
-          <label id="upload-description-label">Description</label>
-        </div>
-        <div className="uploads-details-preview">
-          {preview}
-          <div className="preview-details">
-            <span>Filename</span>
+        <textarea
+          autoFocus
+          className="upload-description"
+          type="text"
+          value={this.state.description}
+          placeholder="Tell viewers about your video"
+          onChange={this.updateDescription.bind(this)}
+        />
+        <div className="uploads-details-preview">{preview}</div>
+        <div className="uploads-details-footer">
+          <p className="uploads-details-filename">
             {this.state.videofile.name}
-          </div>
+          </p>
+          <p className="file-name-path" src={this.state.videofile}></p>
         </div>
-
-        {errors
-          ? errors.map((er) => (
-              <div className="errors upload-err" key={er.id}>
-                {er}
-              </div>
-            ))
-          : ''}
-
         <div className="upload-footer">
-          <div id="trash" onClick={this.handleTrash.bind(this)}></div>
-          <button type="submit" className="select-files">
+          <svg
+            viewBox="0 0 24 24"
+            preserveAspectRatio="xMidYMid meet"
+            focusable="false"
+            className="upload-trash-icon"
+            onClick={this.handleTrash.bind(this)}
+          >
+            <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"></path>
+          </svg>
+          <button type="submit" className="publish-text">
             PUBLISH
           </button>
           {this.state.hidden ? '' : ''}
@@ -211,7 +203,7 @@ class Upload extends React.Component {
           <div className="upload-content">
             <div className="upload-title">
               <p className="title-text">
-                {this.state.next ? this.state.title : 'Upload videos'}
+                {this.state.next ? 'Details' : 'Upload videos'}
               </p>
               <span className="close-button" onClick={this.toggle}>
                 &times;

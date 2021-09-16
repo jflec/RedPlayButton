@@ -5,8 +5,9 @@ import { NavLink } from 'react-router-dom';
 class VideoIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    this.watchVideo = this.watchVideo.bind(this);
+
     this.reffered = React.createRef();
+    this.watchVideo = this.watchVideo.bind(this);
     this.togglePlay = this.togglePlay.bind(this);
     this.togglePause = this.togglePause.bind(this);
   }
@@ -35,7 +36,9 @@ class VideoIndexItem extends React.Component {
             src={video.videoURL}
             loop={true}
             muted
-            onMouseOver={(event) => event.target.play()}
+            onMouseOver={(event) => (
+              (event.target.currentTime = 0), event.target.play()
+            )}
             onMouseOut={(event) => (
               (event.target.currentTime = 0), event.target.pause()
             )}
@@ -43,10 +46,10 @@ class VideoIndexItem extends React.Component {
           <div className="video-display">
             <NavLink exact to={`/c/${video.user.username}`}>
               {!video.user.profile_picture_url ? (
-                <img src={window.defaultPFP} className="user-icon-bigger" />
+                <img src={window.defaultPFP} className="user-icon-medium" />
               ) : (
                 <img
-                  className="user-icon-bigger"
+                  className="user-icon-medium"
                   src={video.user.profile_picture_url}
                 />
               )}
@@ -56,16 +59,12 @@ class VideoIndexItem extends React.Component {
               <p className="uploader-info">{video.user.username}</p>
             </div>
             {video.user.id === this.props.currentUserId &&
-            this.props.showTrash ? (
-              <div id="trash-grow">
-                <div
-                  id="trash"
-                  onClick={() => this.props.deleteVideo(video.id)}
-                ></div>
-              </div>
-            ) : (
-              ''
-            )}
+            this.props.deleteVideoButton ? (
+              <div
+                className="delete-video-icon"
+                onClick={() => this.props.deleteVideo(video.id)}
+              ></div>
+            ) : null}
           </div>
         </div>
       );

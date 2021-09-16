@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import NavbarContainer from '../navbar/navbar_container';
-import Sidebar from '../sidebar';
 import VideoRowsContainer from '../videos/video_rows_container';
 
 function SearchPage(props) {
@@ -20,22 +19,12 @@ function SearchPage(props) {
   if (ready) {
     return (
       <div className="fake-background">
-        <div className="feed-content">
-          <NavbarContainer />
-          <Sidebar />
-          <VideoRowsContainer searching={true} />
-        </div>
+        <NavbarContainer />
+        <VideoRowsContainer searching={true} />
       </div>
     );
   } else {
-    return (
-      <div className="fake-background">
-        <div className="feed-content">
-          <NavbarContainer />
-          <Sidebar />
-        </div>
-      </div>
-    );
+    return null;
   }
 }
 

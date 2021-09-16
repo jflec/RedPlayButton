@@ -9,7 +9,7 @@ function VideoRowsItem(props) {
   }
 
   return (
-    <div className="video-rows-item side-index-item" onClick={visit}>
+    <div className="video-rows-item" onClick={visit}>
       <div>
         <video
           alt={`${video.title} thumbnail`}
@@ -20,18 +20,14 @@ function VideoRowsItem(props) {
           onMouseOut={(event) => (
             (event.target.currentTime = 0), event.target.pause()
           )}
-          className="video-rows-thumbnail side-index-item"
+          className="video-rows-thumbnail"
         ></video>
       </div>
       <div className="video-rows-details">
         <h3>{video.title}</h3>
         <div className="channel-info">
           {!video.user.profile_picture_url ? (
-            <img
-              className="video-rows-user-icon"
-              src={window.defaultPFP}
-              alt=""
-            />
+            <img className="video-rows-user-icon" src={window.defaultPFP} />
           ) : (
             <img
               className="video-rows-user-icon"
