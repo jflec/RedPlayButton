@@ -7,11 +7,9 @@ export default () => {
   return (
     <div className="fake-channel-background">
       <NavbarContainer />
-      <img className="channel-banner" src={window.defaultBanner} />
+      <div className="channel-banner"></div>
       <div className="channel-user-info">
         <ChannelIconContainer />
-        <button className="channel-button-left">CUSTOMIZE CHANNEL</button>
-        <button className="channel-button-right">MANAGE VIDEOS</button>
       </div>
       <VideoIndexContainer page={'channel'} />
     </div>

@@ -16,6 +16,7 @@ html body {
 .errors {
   position: absolute;
   bottom: 160px;
+  left: 40px;
   font-size: 14px;
   list-style: none;
   color: rgb(217, 48, 37);
@@ -23,7 +24,8 @@ html body {
 
 .errors-s {
   position: absolute;
-  bottom: 70px;
+  bottom: 80px;
+  left: 40px;
   font-size: 14px;
   list-style: none;
   color: rgb(217, 48, 37);
@@ -96,6 +98,8 @@ html body {
   height: 48px;
   padding-left: 17px;
   padding-right: 17px;
+  margin-left: 40px;
+  margin-bottom: 4px;
 }
 
 .login-input:focus {
@@ -119,9 +123,9 @@ html body {
 
 .greeting-one {
   font-size: 22px;
-  margin-bottom: -4px;
 }
 .greeting-two {
+  margin-top: 12px;
   font-size: 16px;
 }
 
@@ -202,24 +206,23 @@ mark {
   display: flex;
   top: 23px;
   left: 185px;
+  flex-direction: row;
+  gap: 1px;
 }
 
 .blue {
-  margin-left: $bingleFont;
+
   color: rgb(66, 133, 244);
 }
 
 .red {
-  margin-left: $bingleFont;
   color: rgb(234, 67, 53);
 }
 
 .orange {
-  margin-left: $bingleFont;
   color: rgb(251, 188, 5);
 }
 
 .green {
-  margin-left: $bingleFont;
   color: rgb(52, 168, 83);
 }

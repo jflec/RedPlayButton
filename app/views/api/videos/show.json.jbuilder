@@ -11,7 +11,7 @@ if @video.comments
             json.id comment.id
             json.body comment.body
             json.date time_ago_in_words(comment.created_at) + " ago"
-            if json.commenter do
+            json.commenter do
                 json.extract! comment.commenter, 
                     :id, :username, :profile_picture_url
             end
