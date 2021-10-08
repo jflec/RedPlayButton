@@ -105,9 +105,7 @@ html body {
 .login-input:focus {
   outline: none !important;
   transition: 0.05s;
-  border: 2px solid rgb(26, 115, 232);
-  margin-top: -1px;
-  margin-bottom: -1px;
+  border: 1px solid rgb(26, 115, 232);
 }
 
 .login-input:focus::placeholder {
@@ -116,7 +114,7 @@ html body {
 
 .greeting {
   position: absolute;
-  top: 68px;
+  top: 88px;
   left: 120px;
   text-align: center;
 }
@@ -204,7 +202,7 @@ mark {
   font-size: 26px;
   list-style: none;
   display: flex;
-  top: 23px;
+  top: 40px;
   left: 185px;
   flex-direction: row;
   gap: 1px;
