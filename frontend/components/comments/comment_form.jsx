@@ -24,7 +24,7 @@ function CommentForm(props) {
 
   return (
     <div className="comment-form-container">
-      {user ? (
+      {user.profile_picture_url ? (
         <img className="user-icon-small" src={user.profile_picture_url}></img>
       ) : (
         <img className="user-icon-small" src={window.defaultPFP} />

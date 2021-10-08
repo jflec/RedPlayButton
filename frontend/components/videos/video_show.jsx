@@ -31,29 +31,47 @@ function VideoShow(props) {
   if (video) {
     return (
       <div className="fake-background">
-        <div>
-          <NavbarContainer />
-          <VideoPlayer URL={video.videoURL} id={video.id} max={videos.length} />
-          <div className="video-details-container">
-            <p className="video-title">{video.title}</p>
-            <div className="video-channel-details">
-              <NavLink exact to={`/c/${video.user.username}`}>
-                {video.user.profile_picture_url ? (
-                  <img
-                    className="user-icon-large"
-                    src={video.user.profile_picture_url}
-                  ></img>
-                ) : (
-                  <img className="user-icon-large" src={window.defaultPFP} />
-                )}
-              </NavLink>
-              <p className="video-channel">{video.user.username}</p>
-              <p className="video-description">{video.description}</p>
+        <NavbarContainer />
+        <div className="total-page">
+          <div className="half-page">
+            <div className="video-player-container">
+              <div className="video-holder">
+                <VideoPlayer
+                  URL={video.videoURL}
+                  id={video.id}
+                  max={videos.length}
+                />
+              </div>
+              <div className="video-details-container">
+                <p className="video-title">{video.title}</p>
+                <div className="video-channel-details">
+                  <NavLink exact to={`/c/${video.user.username}`}>
+                    {video.user.profile_picture_url ? (
+                      <img
+                        className="user-icon-large"
+                        src={video.user.profile_picture_url}
+                      ></img>
+                    ) : (
+                      <img
+                        className="user-icon-large"
+                        src={window.defaultPFP}
+                      />
+                    )}
+                  </NavLink>
+                  <p className="video-channel">
+                    {video.user.username}
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    {video.description}
+                  </p>
+                </div>
+              </div>
             </div>
+            <CommentFormContainer />
+            <CommentIndexContainer />
           </div>
           <SideRowsContainer />
-          <CommentFormContainer />
-          <CommentIndexContainer />
         </div>
       </div>
     );

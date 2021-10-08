@@ -19,7 +19,6 @@
 }
 
 .video-rows-details {
-  top: 6px;
   margin-left: 16px;
   position: relative;
   color: white;
@@ -28,6 +27,7 @@
 
 .video-rows-details h3 {
   font-weight: 300;
+  margin-top: 30px;
 }
 
 .video-rows-user-icon {
@@ -38,16 +38,15 @@
 
 .channel-info {
   color: rgb(149, 149, 149);
-  display: flex;
   font-size: 14px;
   position: relative;
-  bottom: 6px;
+  display: flex;
+  margin-top: 20px;
 }
 
 .video-rows-username {
-  position: relative;
-  left: 8px;
-  bottom: 12px;
+  margin-left: 6px;
+  padding: 5px;
 }
 
 .video-rows-description {
