@@ -1,4 +1,5 @@
 import React from 'react';
+import ErrorIcon from '@material-ui/icons/Error'
 
 class UserForm extends React.Component {
   constructor(props) {
@@ -33,6 +34,7 @@ class UserForm extends React.Component {
       <ul className="errors-s">
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>{error}</li>
+          
         ))}
         {$('login-input').addClass('error')}
       </ul>
@@ -44,6 +46,7 @@ class UserForm extends React.Component {
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <li className="bingle">
+
             <ul className="blue">B</ul>
             <ul className="red">i</ul>
             <ul className="orange">n</ul>
@@ -71,10 +74,11 @@ class UserForm extends React.Component {
                 <input
                   type="text"
                   value={this.state.username}
-                  placeholder="Username"
+                  placeholder=" "
                   onChange={this.update('username')}
                   className="login-input"
                 />
+                {/* <span className="placeholder-one">Username</span> */}
               </ul>
               <ul>
                 <input

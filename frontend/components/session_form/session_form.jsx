@@ -36,9 +36,8 @@ class SessionForm extends React.Component {
     return (
       <ul className="errors">
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>{error}</li>
+          <li key={`error-${i}`}><img className="error-icon" src={window.errorIcon}/>{error}</li>
         ))}
-        {$('login-input').addClass('error')}
       </ul>
     );
   }
@@ -57,6 +56,7 @@ class SessionForm extends React.Component {
           </li>
           <div className="greeting">
             <p className="greeting-one">Sign in</p>
+            
             <p className="greeting-two">to continue to RedPlayButton</p>
           </div>
           {this.renderErrors()}
@@ -66,19 +66,21 @@ class SessionForm extends React.Component {
                 <input
                   type="text"
                   value={this.state.username}
-                  placeholder="Username"
+                  placeholder=" "
                   onChange={this.update('username')}
-                  className="login-input"
+                  className="login-input one"
                 />
+                <span className="placeholder-one">Username</span>
               </ul>
               <ul>
                 <input
                   type="password"
                   value={this.state.password}
-                  placeholder="Password"
+                  placeholder=" "
                   onChange={this.update('password')}
-                  className="login-input"
+                  className="login-input two"
                 />
+                <span className="placeholder-two">Password</span>
               </ul>
             </li>
             <p className="demo-text">Don't feel like making an account?</p>
