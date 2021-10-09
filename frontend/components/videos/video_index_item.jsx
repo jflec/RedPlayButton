@@ -5,7 +5,6 @@ import { NavLink } from 'react-router-dom';
 class VideoIndexItem extends React.Component {
   constructor(props) {
     super(props);
-
     this.reffered = React.createRef();
     this.watchVideo = this.watchVideo.bind(this);
     this.togglePlay = this.togglePlay.bind(this);
@@ -18,6 +17,7 @@ class VideoIndexItem extends React.Component {
 
   togglePlay(e) {
     this.reffered.current.play();
+    
   }
 
   togglePause(e) {
@@ -56,7 +56,9 @@ class VideoIndexItem extends React.Component {
             </NavLink>
             <div className="video-info">
               <h3 onClick={this.watchVideo}>{video.title}</h3>
-              <p className="uploader-info">{video.user.username}</p>
+              <p className="uploader-info">{`${video.user.username}`}</p>
+
+              <p className="index-view-count">{`${video.viewsCount} views • ${video.date}`}</p>
             </div>
             {video.user.id === this.props.currentUserId &&
             this.props.deleteVideoButton ? (

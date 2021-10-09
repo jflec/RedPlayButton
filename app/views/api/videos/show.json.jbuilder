@@ -1,10 +1,10 @@
-json.extract! @video, :id, :title, :description, :uploader_id
+json.extract! @video, :id, :title, :description, :uploader_id, :created_at
 json.videoURL url_for(@video.videofile)
-thumbnail = @video.thumbnail.attached? ? url_for(@video.thumbnail) : nil
-json.thumbURL thumbnail
 json.user do
     json.extract! @video.user, :id, :username, :profile_picture_url
 end
+json.date time_ago_in_words(@video.created_at) + " ago"
+json.viewsCount @video.views.length
 
 if @video.comments
     json.comments @video.comments do |comment|

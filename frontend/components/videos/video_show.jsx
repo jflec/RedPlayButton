@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { Component, useEffect } from 'react';
 import NavbarContainer from '../navbar/navbar_container';
 import VideoPlayer from './video_player';
 import SideRowsContainer from './side_rows_container';
@@ -10,8 +10,10 @@ function VideoShow(props) {
   const { videos, video, userId } = props;
 
   useEffect(() => {
+    
     if (videos.length <= 1) {
       props.fetchVideos();
+      
     }
 
     return () => {
@@ -40,10 +42,12 @@ function VideoShow(props) {
                   URL={video.videoURL}
                   id={video.id}
                   max={videos.length}
+                  
                 />
               </div>
               <div className="video-details-container">
                 <p className="video-title">{video.title}</p>
+                <p className="view-count-date">{`${video.viewsCount} views • ${video.date}`}</p>
                 <div className="video-channel-details">
                   <NavLink exact to={`/c/${video.user.username}`}>
                     {video.user.profile_picture_url ? (

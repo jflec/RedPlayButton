@@ -1,6 +1,13 @@
 class Api::VideosController < ApplicationController
     def show
-        @video = Video.includes( thumbnail_attachment: [:blob], videofile_attachment: [:blob], comments: [:commenter]).find_by(id: params[:id])
+       
+         if params[:userId] == ""
+            View.create!(video_id: params[:id])
+        else
+            @userId = params[:userId].to_i
+            View.create!(viewer_id: @userId, video_id: params[:id])
+        end
+         @video = Video.includes( :views, thumbnail_attachment: [:blob], videofile_attachment: [:blob], comments: [:commenter]).find_by(id: params[:id])
     end
     
     def index
