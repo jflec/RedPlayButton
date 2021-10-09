@@ -33,7 +33,7 @@ class UserForm extends React.Component {
     return (
       <ul className="errors-s">
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>{error}</li>
+          <li key={`error-${i}`}><img className="error-icon" src={window.errorIcon}/>{error}</li>
           
         ))}
         {$('login-input').addClass('error')}
@@ -46,7 +46,6 @@ class UserForm extends React.Component {
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <li className="bingle">
-
             <ul className="blue">B</ul>
             <ul className="red">i</ul>
             <ul className="orange">n</ul>
@@ -65,10 +64,11 @@ class UserForm extends React.Component {
                 <input
                   type="text"
                   value={this.state.email}
-                  placeholder="Email"
+                  placeholder=" "
                   onChange={this.update('email')}
-                  className="login-input"
+                  className="login-input one"
                 />
+                <span className="placeholder-one">Email</span>
               </ul>
               <ul>
                 <input
@@ -76,18 +76,19 @@ class UserForm extends React.Component {
                   value={this.state.username}
                   placeholder=" "
                   onChange={this.update('username')}
-                  className="login-input"
+                  className="login-input two"
                 />
-                {/* <span className="placeholder-one">Username</span> */}
+                <span className="placeholder-two">Username</span>
               </ul>
               <ul>
                 <input
                   type="password"
                   value={this.state.password}
-                  placeholder="Password"
+                  placeholder=" "
                   onChange={this.update('password')}
                   className="login-input"
                 />
+                <span className="placeholder-three">Password</span>
               </ul>
             </li>
             {this.props.navLink}

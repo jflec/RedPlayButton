@@ -44,6 +44,12 @@ html body {
   color: rgb(217, 48, 37);
 }
 
+.errors-s li {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
 .login-form-container {
   border: 1px solid rgb(218, 220, 224);
   border-radius: 10px;
@@ -245,19 +251,31 @@ mark {
 .placeholder-one {
   position: absolute;
   pointer-events: none;
-  left: 50px;
+  left: 58px;
   top: 18px;
   transition: 0.2s;
   color: rgb(104, 104, 104);
+   font-size: 16px;
 }
 
 .placeholder-two {
   position: absolute;
   pointer-events: none;
-  left: 50px;
-  top: 82px;
+  left: 58px;
+  top: 84px;
   transition: 0.2s;
   color: rgb(104, 104, 104);
+   font-size: 16px;
+}
+
+.placeholder-three {
+  position: absolute;
+  pointer-events: none;
+  left: 58px;
+  top: 148px;
+  transition: 0.2s;
+  color: rgb(104, 104, 104);
+   font-size: 16px;
 }
 
 .login-input:focus + .placeholder-one,
@@ -275,7 +293,19 @@ mark {
 .login-input:focus + .placeholder-two,
 .login-input:not(:focus):valid .placeholder-two,
 .login-input:not(:placeholder-shown) + .placeholder-two {
-  top: 54px;
+  top: 52px;
+  left: 44px;
+  font-size: 14px;
+  opacity: 1;
+  padding: 6px;
+  color: rgb(26, 115, 232);
+  background-color: rgb(255, 255, 255);
+}
+
+.login-input:focus + .placeholder-three,
+.login-input:not(:focus):valid .placeholder-three,
+.login-input:not(:placeholder-shown) + .placeholder-three {
+  top: 120px;
   left: 44px;
   font-size: 14px;
   opacity: 1;
