@@ -26,6 +26,7 @@ function SideRowsItem(props) {
       <div className="side-rows-details">
         <h3>{video.title}</h3>
         <p className="side-rows-username">{video.user.username}</p>
+        <p>{`${video.viewsCount} views • ${video.date}`}</p>
       </div>
     </div>
   );

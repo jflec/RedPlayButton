@@ -66,7 +66,6 @@ function VideoShow(props) {
                     {video.user.username}
                     <br></br>
                     <br></br>
-                    <br></br>
                     {video.description}
                   </p>
                 </div>

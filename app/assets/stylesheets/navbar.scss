@@ -21,20 +21,26 @@
 .auth-button {
   cursor: pointer;
   position: absolute;
-  right: 5px;
+  right: 10px;
   width: 109px;
-  margin-top: 5px;
+  margin-top: 9px;
   transition: 0.2s;
   border: 1px solid rgb(62, 166, 255);
   background-color: transparent;
   color: rgb(62, 166, 255);
-  padding: 14px 0px;
+  padding: 6px 0px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 
-.auth-button:hover {
+.sign-in-icon {
+  width: 24px;
+  height: 24px;
   transition: 0.2s;
-  color: white;
-  border-color: white;
+  filter: invert(48%) sepia(95%) saturate(1006%) hue-rotate(186deg) brightness(103%) contrast(102%);
 }
 
 .user-icon {
