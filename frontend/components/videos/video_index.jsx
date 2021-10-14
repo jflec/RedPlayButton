@@ -12,6 +12,7 @@ function VideoIndex(props) {
     let filter = videos;
     if (page === 'channel')
       filter = videos.filter((video) => video.user.id === userId);
+    
 
     return (
       <div className={`video-index`}>
