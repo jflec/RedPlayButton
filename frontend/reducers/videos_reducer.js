@@ -24,13 +24,8 @@ const videosReducer = (state = {}, action) => {
             return newState
 
         case RECEIVE_LIKE:
-            if (action.like.likeable_type === "Video") {
-                newState[action.like.likeable_id].like = action.like;
-                return newState;
-            } else {
-                return state;
-            }
-            break;
+            newState[action.like.likeable_id].like = action.like;
+            return newState;
 
         default:
             return state;

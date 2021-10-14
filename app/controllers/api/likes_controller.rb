@@ -1,12 +1,7 @@
 class Api::LikesController < ApplicationController
     
     def create
-        if like_params[:likeable_type] == "Video"
-            likeable = Video.find_by(id: like_params[:likeable_id])
-        else
-            likeable = Comment.find_by(id: like_params[:likeable_id])
-        end
-
+        likeable = Video.find_by(id: like_params[:likeable_id])
         if likeable.likes.create(like_params)
             @like = Like.find_by(liker_id: like_params[:liker_id],
             likeable_id: like_params[:likeable_id])
@@ -30,8 +25,6 @@ class Api::LikesController < ApplicationController
         @like = Like.find_by(id: params[:id])
 
         if @like.destroy
-            
-            render json: "DESTROYED"
         else
             
             render json: @like.errors.full_messages, status: :unprocessable_entity
