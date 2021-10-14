@@ -1,13 +1,19 @@
-import React, { Component, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import NavbarContainer from '../navbar/navbar_container';
 import VideoPlayer from './video_player';
 import SideRowsContainer from './side_rows_container';
 import CommentFormContainer from '../comments/comment_form_container';
 import CommentIndexContainer from '../comments/comment_index_container';
 import { NavLink } from 'react-router-dom';
+import VideoTools from './video_tools';
 
 function VideoShow(props) {
   const { videos, video, userId } = props;
+  const [isActive, setActive] = useState(false);
+
+    const toggleClass = () => {
+    setActive(!isActive);
+  };
 
   useEffect(() => {
     
@@ -48,6 +54,7 @@ function VideoShow(props) {
               <div className="video-details-container">
                 <p className="video-title">{video.title}</p>
                 <p className="view-count-date">{`${video.viewsCount} views • ${video.date}`}</p>
+                <VideoTools {...props}/>
                 <div className="video-channel-details">
                   <NavLink exact to={`/c/${video.user.username}`}>
                     {video.user.profile_picture_url ? (
@@ -68,6 +75,7 @@ function VideoShow(props) {
                     <br></br>
                     {video.description}
                   </p>
+                  { isActive ? <button className="subscribe-button" onClick={toggleClass}>SUBSCRIBE</button> : <button className="unsubscribe-button" onClick={toggleClass}>SUBSCRIBED</button>}
                 </div>
               </div>
             </div>

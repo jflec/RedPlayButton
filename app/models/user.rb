@@ -16,6 +16,15 @@ class User < ApplicationRecord
         foreign_key: :commenter_id,
         class_name: :Comment
 
+     has_many :likes,
+        foreign_key: :liker_id,
+        class_name: :Like
+
+    has_many :liked_videos,
+        through: :likes,
+        source: :likeable,
+        source_type: :Video
+
 
     before_validation :ensure_session_token
 

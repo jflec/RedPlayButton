@@ -18,6 +18,9 @@ class Video < ApplicationRecord
     through: :comments,
     source: :commenter
 
+    has_many :likes,
+        as: :likeable
+
     has_one_attached :videofile
     has_one_attached :thumbnail
 

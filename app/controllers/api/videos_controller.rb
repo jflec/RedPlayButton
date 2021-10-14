@@ -7,16 +7,16 @@ class Api::VideosController < ApplicationController
             @userId = params[:userId].to_i
             View.create!(viewer_id: @userId, video_id: params[:id])
         end
-         @video = Video.includes( :views, thumbnail_attachment: [:blob], videofile_attachment: [:blob], comments: [:commenter]).find_by(id: params[:id])
+         @video = Video.includes( :views, :likes, thumbnail_attachment: [:blob], videofile_attachment: [:blob], comments: [:commenter]).find_by(id: params[:id])
     end
     
     def index
         @userId = current_user.id if current_user
         if params[:query]
             @videos = Video.where('lower(title) like ?',
-            "%#{params[:query].downcase}%").includes(:user, thumbnail_attachment: [:blob], videofile_attachment: [:blob])
+            "%#{params[:query].downcase}%").includes(:user, :likes, thumbnail_attachment: [:blob], videofile_attachment: [:blob])
         else
-            @videos = Video.all.includes(:user, thumbnail_attachment: [:blob], videofile_attachment: [:blob])
+            @videos = Video.all.includes(:user, :likes, thumbnail_attachment: [:blob], videofile_attachment: [:blob])
         end
 
     end

@@ -59,7 +59,7 @@
   display: flex;
   height: auto;
   padding: 20px 0px;
- text-align: center;
+  text-align: center;
 
 }
 .video-details-container {
@@ -71,7 +71,7 @@
 
 .video-channel {
   margin-left: 14px;
-  margin-top: 14px;
+  margin-top: 8px;
   position: relative;
   color: white;
   text-align: left;
@@ -154,24 +154,20 @@
   width: 105px;
   height: 37px;
   position: relative;
-  color: rgb(170, 170, 170);
   margin-top: 8px;
   float: right;
   font-weight: bold;
-  margin-right: 6px;
+  margin-right: 20px;
+  border-radius: 3px;
+  transition: 0.2s;
+  color: #AAAAAA;
+  background-color: rgb(48, 48, 48);
 }
 
 .comment-button:hover {
   transition: 0.2s;
   color: black;
   background-color: rgb(62, 166, 255);
-}
-
-.comment-button {
-  border-radius: 3px;
-  transition: 0.2s;
-  color: rgb(113, 113, 113);
-  background-color: rgb(48, 48, 48);
 }
 
 .comment-display {
@@ -213,4 +209,76 @@
   margin-top: 14px;
   color:rgb(113, 113, 113);
 
+}
+
+.video-like, .video-dislike, .video-share-icon {
+  fill: white;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.subscribe-button {
+  position: absolute;
+  right: 20px;
+  border: none;
+  color: white;
+  height: 37px;
+  width: 110px;
+  border-radius: 3px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+  background-color: #CC0000;
+}
+
+.subscribe-button:hover {
+  transition: 0.2s;
+  background-color: #b30000;
+}
+
+.unsubscribe-button {
+  position: absolute;
+  right: 20px;
+  border: none;
+  color: #AAAAAA;
+  height: 37px;
+  width: 110px;
+  border-radius: 3px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+  background-color: #303030;
+}
+
+.unsubscribe-button:hover {
+  transition: 0.2s;
+  background-color: #252525;
+}
+
+.video-tools {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  float: right;
+  gap: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.button-normal {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  gap: 8px;
+}
+
+.likeActive {
+  fill: rgb(62, 166, 255);
 }
