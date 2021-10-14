@@ -1,8 +1,9 @@
+import { ZoomInRounded } from '@material-ui/icons';
 import React from 'react';
 import { withRouter } from 'react-router';
 
 function SideRowsItem(props) {
-  const { video } = props;
+  const { video } = props;ZoomInRounded
 
   function visit() {
     props.history.push(`/watch/${video.id}`);

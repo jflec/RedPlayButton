@@ -17,7 +17,6 @@ class VideoIndexItem extends React.Component {
 
   togglePlay(e) {
     this.reffered.current.play();
-    
   }
 
   togglePause(e) {

@@ -62,7 +62,7 @@ class UserForm extends React.Component {
             <li className="input-list">
               <ul>
                 <input
-                  type="text"
+                  type="email" required
                   value={this.state.email}
                   placeholder=" "
                   onChange={this.update('email')}

@@ -11,15 +11,13 @@ function VideoShow(props) {
   const { videos, video, userId } = props;
   const [isActive, setActive] = useState(false);
 
-    const toggleClass = () => {
+  const toggleClass = () => {
     setActive(!isActive);
   };
 
   useEffect(() => {
-    
     if (videos.length <= 1) {
       props.fetchVideos();
-      
     }
 
     return () => {
@@ -48,13 +46,12 @@ function VideoShow(props) {
                   URL={video.videoURL}
                   id={video.id}
                   max={videos.length}
-                  
                 />
               </div>
               <div className="video-details-container">
                 <p className="video-title">{video.title}</p>
                 <p className="view-count-date">{`${video.viewsCount} views • ${video.date}`}</p>
-                <VideoTools {...props}/>
+                <VideoTools {...props} />
                 <div className="video-channel-details">
                   <NavLink exact to={`/c/${video.user.username}`}>
                     {video.user.profile_picture_url ? (
@@ -75,7 +72,18 @@ function VideoShow(props) {
                     <br></br>
                     {video.description}
                   </p>
-                  { isActive ? <button className="subscribe-button" onClick={toggleClass}>SUBSCRIBE</button> : <button className="unsubscribe-button" onClick={toggleClass}>SUBSCRIBED</button>}
+                  {isActive ? (
+                    <button className="subscribe-button" onClick={toggleClass}>
+                      SUBSCRIBE
+                    </button>
+                  ) : (
+                    <button
+                      className="unsubscribe-button"
+                      onClick={toggleClass}
+                    >
+                      SUBSCRIBED
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
