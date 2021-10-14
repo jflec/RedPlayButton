@@ -19,6 +19,28 @@ RedPlayButton is a YouTube clone where users can upload, watch, share, and comme
 * Backend: PostgreSQL & Ruby on Rails API
 * Frontend: React, Redux, JS & JSX, HTML, SCSS
 
+```javascript
+
+  onDrop(e) {
+    e.preventDefault();
+    const mFile = e.dataTransfer.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({
+        videoURL: fileReader.reseult,
+        videofile: mFile,
+        title: mFile.name.split('.')[0],
+      });
+    };
+    if (mFile) {
+      fileReader.readAsDataURL(mFile);
+    }
+  }
+```
+A portion of code taken from the upload functionality.
+
+In my experience, whenever I upload something I always use drag and drop and so I saw it as a must have. When starting work on the upload feature I made sure to include some sort of drag and drop functionality. I had never used FileReader before or anything like that so it took me some time to read the documentation on it but after figuring it out and testing the finished feature it was very rewarding.
+
 ## Project Challenges
 
 The first step was to create the user authentication page, RedPlayButton being a YouTube clone, I decided to copy the Google sign in.
